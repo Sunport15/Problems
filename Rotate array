@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{    int k,l,m,i,j,n;
+     printf("Enter size of array : ");
+     scanf("%d",&n);
+     int A[n];
+    //rotate an array
+    //int A[7]={1,2,3,4,5,6,7};
+    printf("Enter 1-D array elements : ");
+    for(i=0;i<n;i++){
+        scanf("%d",&A[i]);
+    }
+    printf("Enter value of K :");
+    scanf("%d",&k);
+    int temp[k+1];
+    l = k+1;
+    for(i=0;i<(k+1);i++){
+      j=l+i;
+      temp[i]=A[i];
+      A[i]=A[j];
+    }
+    j=0;
+    m=n-(k+1);
+    for(i=m;i<n;i++){
+        A[i]=temp[j];
+        j++;
+        
+    }
+    printf("\nPrinting rotated array : ");
+    for(i=0;i<n;i++){
+        printf("%d",A[i]);
+    }
+    
+    
+    return 0;
+}
